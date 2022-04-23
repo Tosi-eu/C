@@ -19,16 +19,18 @@
 
 int main(){
 
-    char str[30], *inverted;
+    char *str, *inverted;
     int i, size, index, equal = 0;
 
+
+    str = (char *)malloc(sizeof(char));
     inverted = (char *)malloc(sizeof(char));
 
     gets(str);
 
     index = strlen(str); // index = string size
 
-    for(i = 0; i < index; i++){
+    for(i = 0; i < strlen(str); i++){
         inverted[i] = str[index - 1];
         index--;
     }
@@ -44,5 +46,7 @@ int main(){
         printf("\nNo, they are not...\n");
 
     free(inverted);
+    free(str);
+    
     return 0;
 }
