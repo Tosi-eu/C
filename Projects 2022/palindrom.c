@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 /*
   int str[20], str_inverted[20];
@@ -16,22 +17,23 @@
 
 */
 
-
 int main(){
 
-    char str[30], inverted[30];
+    char str[30], *inverted;
     int i, size, index, equal = 0;
+
+    inverted = (char *)malloc(sizeof(char));
 
     gets(str);
 
-    index = strlen(str);
+    index = strlen(str); // index = string size
 
-    for(i = 0; i < strlen(str); i++){
+    for(i = 0; i < index; i++){
         inverted[i] = str[index - 1];
         index--;
     }
 
-    inverted[i] = '\0';
+    inverted[i] = '\0'; // if dont do that, the strings will be different, but we dont see this in the result
     size = strlen(str);
 
     printf("Original: %s\nInverted: %s\n", str, inverted);
@@ -41,5 +43,6 @@ int main(){
     }else
         printf("\nNo, they are not...\n");
 
+    free(inverted);
     return 0;
 }
