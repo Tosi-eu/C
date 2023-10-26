@@ -1,1 +1,1 @@
- All projects that I have made in 2021.1.
+Exercises that I made during the Introdution to Computing Science I subject at USP in 2021
